@@ -5,13 +5,15 @@ import { getSingleBook } from '../API';
 import BookCard from './BookCard';
 
 export default function SingleBook(){
-    const {bookid}= useParams();
+    const {bookId}= useParams();
     const [book, setBook]= useState({});
     
 
     useEffect(()=>{
         (async function(){
-            const book= await getSingleBook(bookid);
+        
+            const book= await getSingleBook(bookId);
+            
             setBook(book);
         })();
     },[]);
